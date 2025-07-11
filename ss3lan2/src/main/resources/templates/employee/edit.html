@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container mt-4">
+  <h2>Sửa thông tin nhân viên</h2>
+  <form th:action="@{/employees/edit/{id}(id=${employee.id})}" method="post">
+    <div class="mb-3">
+      <label class="form-label">Tên</label>
+      <input type="text" class="form-control" th:field="*{name}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" th:field="*{email}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Số điện thoại</label>
+      <input type="text" class="form-control" th:field="*{phoneNumber}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Lương</label>
+      <input type="number" class="form-control" th:field="*{salary}" step="0.01" required>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Cập nhật</button>
+      <a th:href="@{/employees}" class="btn btn-secondary">Quay lại</a>
+    </div>
+  </form>
+</div>
+</body>
+</html>

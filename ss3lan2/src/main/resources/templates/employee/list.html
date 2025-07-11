@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="mb-4">Danh sách nhân viên</h2>
+
+    <form th:action="@{/employees}" method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <input type="text" name="phone" class="form-control" placeholder="Tìm theo số điện thoại"
+                   th:value="${phone}">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        </div>
+        <div class="col-auto">
+            <a th:href="@{/employees}" class="btn btn-secondary">Reset</a>
+        </div>
+    </form>
+
+    <div class="mb-3">
+        <a th:href="@{/employees/add}" class="btn btn-success">+ Thêm nhân viên</a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>
+                <a th:href="@{/employees(page=${currentPage}, sortField='id', direction=${direction == 'asc' ? 'desc' : 'asc'}, phone=${phone})}">
+                    ID
+                </a>
+            </th>
+            <th>
+                <a th:href="@{/employees(page=${currentPage}, sortField='name', direction=${direction == 'asc' ? 'desc' : 'asc'}, phone=${phone})}">
+                    Tên
+                </a>
+            </th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Lương</th>
+            <th>Ngày tạo</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emp : ${employeePage.content}">
+            <td th:text="${emp.id}"></td>
+            <td th:text="${emp.name}"></td>
+            <td th:text="${emp.email}"></td>
+            <td th:text="${emp.phoneNumber}"></td>
+            <td th:text="${emp.salary}"></td>
+            <td th:text="${#dates.format(emp.createdAt, 'dd/MM/yyyy HH:mm')}"></td>
+            <td>
+                <a th:href="@{/employees/edit/{id}(id=${emp.id})}" class="btn btn-warning btn-sm">Sửa</a>
+                <a th:href="@{/employees/{id}(id=${emp.id})}" class="btn btn-danger btn-sm">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <nav th:if="${employeePage.totalPages > 1}">
+        <ul class="pagination">
+            <li class="page-item" th:classappend="${employeePage.first} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/employees(page=${employeePage.number - 1}, size=${employeePage.size}, sortField=${sortField}, direction=${direction}, phone=${phone})}">«</a>
+            </li>
+            <li class="page-item" th:each="i : ${#numbers.sequence(0, employeePage.totalPages - 1)}"
+                th:classappend="${i == employeePage.number} ? 'active'">
+                <a class="page-link"
+                   th:href="@{/employees(page=${i}, size=${employeePage.size}, sortField=${sortField}, direction=${direction}, phone=${phone})}"
+                   th:text="${i + 1}"></a>
+            </li>
+            <li class="page-item" th:classappend="${employeePage.last} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/employees(page=${employeePage.number + 1}, size=${employeePage.size}, sortField=${sortField}, direction=${direction}, phone=${phone})}">»</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

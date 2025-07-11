@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/products/add}" method="post" th:object="${product}" class="container mt-5">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" th:field="*{productName}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="text" class="form-control" th:field="*{price}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">producer</label>
+        <input type="text" class="form-control" th:field="*{producer}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input type="text" class="form-control" th:field="*{quantity}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select id="category" class="form-control" th:field="*{cate.cateId}">
+            <option th:each="c:${category}" th:label="${c.cateName}" th:value="${c.cateId}"></option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
