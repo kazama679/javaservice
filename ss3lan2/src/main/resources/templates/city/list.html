@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Danh sách thành phố</h2>
+<form th:action="@{/cities}" method="get">
+  <input type="text" name="keyword" th:value="${keyword}" placeholder="Tìm theo tên">
+  <button type="submit">Tìm kiếm</button>
+</form>
+<a th:href="@{/cities/add}">Thêm mới</a>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Tên</th>
+    <th>Mùa</th>
+    <th>Diện tích</th>
+    <th>Dân số</th>
+    <th>Quốc gia</th>
+    <th>Hành động</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="city : ${cities}">
+    <td th:text="${city.cityId}"></td>
+    <td th:text="${city.cityName}"></td>
+    <td th:text="${city.sesson}"></td>
+    <td th:text="${city.area}"></td>
+    <td th:text="${city.population}"></td>
+    <td th:text="${city.country.countryName}"></td>
+    <td>
+      <a th:href="@{/cities/edit/{id}(id=${city.cityId})}">Sửa</a> |
+      <a th:href="@{/cities/delete/{id}(id=${city.cityId})}" onclick="return confirm('Bạn có chắc muốn xoá?')">Xoá</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

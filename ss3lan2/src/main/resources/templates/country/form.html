@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/countries/save}" method="post" th:object="${country}">
+  <input type="hidden" th:field="*{countryId}">
+  <input type="text" th:field="*{countryName}" placeholder="Tên quốc gia">
+  <input type="text" th:field="*{continental}" placeholder="Lục địa">
+  <button type="submit">Lưu</button>
+</form>
+</body>
+</html>

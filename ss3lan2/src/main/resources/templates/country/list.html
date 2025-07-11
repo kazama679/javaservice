@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/countries}" method="get">
+    <input type="text" name="keyword" th:value="${keyword}" placeholder="Tìm theo tên">
+    <button type="submit">Tìm</button>
+</form>
+
+<a th:href="@{/countries/add}">Thêm mới</a>
+<table>
+    <tr><th>ID</th><th>Tên</th><th>Lục địa</th><th>Hành động</th></tr>
+    <tr th:each="c : ${countries}">
+        <td th:text="${c.countryId}"></td>
+        <td th:text="${c.countryName}"></td>
+        <td th:text="${c.continental}"></td>
+        <td>
+            <a th:href="@{|/countries/edit/${c.countryId}|}">Sửa</a>
+            <a th:href="@{|/countries/delete/${c.countryId}|}">Xóa</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

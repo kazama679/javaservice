@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 th:text="${city.cityId == null ? 'Thêm thành phố' : 'Cập nhật thành phố'}"></h2>
+<form th:action="@{/cities/save}" method="post" th:object="${city}">
+  <input type="hidden" th:field="*{cityId}"/>
+  Tên: <input type="text" th:field="*{cityName}"/><br>
+  Mùa: <input type="text" th:field="*{sesson}"/><br>
+  Diện tích: <input type="number" step="0.1" th:field="*{area}"/><br>
+  Dân số: <input type="number" th:field="*{population}"/><br>
+  Quốc gia:
+  <select th:field="*{country}">
+    <option th:each="c : ${countries}" th:value="${c}" th:text="${c.countryName}"></option>
+  </select><br>
+  <button type="submit">Lưu</button>
+</form>
+<a th:href="@{/cities}">Quay lại</a>
+</body>
+</html>
