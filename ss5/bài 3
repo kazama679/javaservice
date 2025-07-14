@@ -1,0 +1,10 @@
+RESTful API là một kiểu thiết kế kiến trúc dùng trong phát triển dịch vụ web, cho phép các hệ thống giao tiếp với nhau thông qua giao thức HTTP. 
+Nguyên lý hoạt động của RESTful API dựa trên một số nguyên tắc cốt lõi. 
++ Thứ nhất, stateless nghĩa là mỗi yêu cầu từ client đến server đều độc lập và chứa đầy đủ thông tin cần thiết, server không lưu trạng thái phiên làm việc. 
++ Thứ hai, client-server là nguyên tắc phân tách giữa phía giao diện người dùng và xử lý dữ liệu, 
+giúp tăng tính linh hoạt và khả năng mở rộng. 
+
+
+Ngoài ra, RESTful API sử dụng các HTTP methods như GET, POST, PUT và DELETE  
+để thao tác với tài nguyên được biểu diễn bằng URL. 
+Nhờ thiết kế đơn giản, rõ ràng và hiệu quả, RESTful API trở thành chuẩn phổ biến trong phát triển phần mềm hiện nay.
