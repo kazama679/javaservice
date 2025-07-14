@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Danh sách sinh viên</h2>
+<form method="get" th:action="@{/students/search}">
+    <input type="text" name="keyword" placeholder="Tìm theo tên, địa chỉ, lớp">
+    <button type="submit">Tìm kiếm</button>
+</form>
+<a th:href="@{/students/create}">Thêm mới sinh viên</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Họ tên</th>
+        <th>Giới tính</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Lớp</th>
+        <th>Hành động</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.studentId}">1</td>
+        <td th:text="${student.fullName}">Nguyễn Văn A</td>
+        <td th:text="${student.gender ? 'Nam' : 'Nữ'}">Nam</td>
+        <td th:text="${#dates.format(student.birthday, 'dd/MM/yyyy')}">01/01/2000</td>
+        <td th:text="${student.address}">Hà Nội</td>
+        <td th:text="${student.className}">12A1</td>
+        <td>
+            <a th:href="@{/students/edit/{id}(id=${student.studentId})}">Sửa</a> |
+            <a th:href="@{/students/delete/{id}(id=${student.studentId})}">Xoá</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

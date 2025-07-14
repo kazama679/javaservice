@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Sửa thông tin sinh viên</h2>
+<form th:action="@{/students/edit/{id}(id=${student.studentId})}" th:object="${student}" method="post">
+  <p>Họ tên: <input type="text" th:field="*{fullName}" required></p>
+  <p>Giới tính:
+    <select th:field="*{gender}">
+      <option th:value="true">Nam</option>
+      <option th:value="false">Nữ</option>
+    </select>
+  </p>
+  <p>Ngày sinh: <input type="date" th:field="*{birthday}"></p>
+  <p>Địa chỉ: <input type="text" th:field="*{address}"></p>
+  <p>Lớp: <input type="text" th:field="*{className}"></p>
+  <button type="submit">Cập nhật</button>
+  <a th:href="@{/students}">Quay lại</a>
+</form>
+</body>
+</html>
