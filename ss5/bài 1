@@ -1,0 +1,9 @@
+Dịch vụ Web Service là một hệ thống phần mềm cho phép các ứng dụng khác nhau giao tiếp và trao đổi dữ liệu với nhau thông qua mạng, thường là Internet.
+Hai loại dịch vụ web phổ biến hiện nay là SOAP và REST. 
+SOAP là giao thức dựa trên XML, cung cấp một cách tiếp cận nghiêm ngặt và an toàn để truyền thông điệp giữa các hệ thống. 
+Trong khi đó, REST linh hoạt hơn, sử dụng các phương thức HTTP như GET, POST, PUT, DELETE và thường truyền dữ liệu dưới dạng JSON hoặc XML.
+
+Dịch vụ web đóng vai trò quan trọng trong việc kết nối các hệ thống phần mềm khác nhau,
+bất kể chúng được viết bằng ngôn ngữ lập trình nào hay chạy trên nền tảng nào. 
+Chúng giúp các ứng dụng có thể **tương tác với nhau một cách hiệu quả, tái sử dụng chức năng và tích hợp hệ thống nhanh chóng. 
+Điều này đặc biệt quan trọng trong phát triển phần mềm hiện đại, nơi mà các hệ thống phân tán và microservices ngày càng phổ biến.
