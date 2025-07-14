@@ -1,0 +1,8 @@
+| Tiêu chí          | SOAP                                                        | REST                                                        |
+| ----------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| Kiến trúc         | Stateful hoặc Stateless tùy vào thiết kế                    | Stateless                                                   |
+| Định dạng dữ liệu | Chủ yếu là XML                                              | Hỗ trợ nhiều định dạng: JSON, XML, HTML, Text               |
+| Tính linh hoạt    | Sử dụng một giao thức duy nhất là HTTP (POST) hoặc SMTP     | Sử dụng đầy đủ các phương thức HTTP: GET, POST, PUT, DELETE |
+| Tính bảo mật      | Hỗ trợ WS-Security, bảo mật cấp độ tin nhắn cao             | Dựa vào HTTPS, đơn giản hơn nhưng ít tính năng bảo mật hơn  |
+| Khả năng mở rộng  | Ít linh hoạt, phức tạp khi mở rộng                          | Dễ mở rộng, tích hợp tốt với các hệ thống web hiện đại      |
+| Hiệu suất         | Thường chậm hơn do dùng XML và cấu trúc phức tạp            | Nhanh hơn, nhẹ hơn, phù hợp cho thiết bị di động hoặc web   |
