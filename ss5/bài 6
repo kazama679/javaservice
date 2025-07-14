@@ -1,0 +1,15 @@
+1. Thêm sản phẩm mới – POST /products
+- Mô tả kết quả:
++ Postman trả về object JSON chứa thông tin sản phẩm đã thêm với id: 1. Dữ liệu được lưu thành công và có thể xem lại qua endpoint GET.
+
+2. Lấy danh sách sản phẩm – GET /products
+- Mô tả kết quả:
++ Postman trả về một mảng JSON gồm tất cả các sản phẩm hiện có. Mỗi object trong mảng có id, name, description, price.
+
+3. Cập nhật sản phẩm – PUT /products/{id}
+- Mô tả kết quả:
++ Postman trả về thông tin sản phẩm với id = 1, đã được cập nhật đúng tên, mô tả và giá tiền. Kiểm tra lại bằng GET thấy dữ liệu đã thay đổi.
+
+4. Xóa sản phẩm – DELETE /products/{id}
+- Mô tả kết quả:
++ Postman trả về mã 204 No Content, xác nhận sản phẩm id = 1 đã được xóa. Gửi lại yêu cầu GET /products/1 thì trả về null hoặc 404 Not Found.
