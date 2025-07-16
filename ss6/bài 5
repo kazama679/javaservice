@@ -1,0 +1,7 @@
+| Endpoint           | Method | Kết quả trả về                    | 
+| ------------------ | ------ | --------------------------------- | 
+| /books             | POST   | 200 OK, sách được thêm            |
+| /books             | GET    | 200 OK, danh sách chứa 1 sách     |
+| /books/1           | PUT    | 200 OK, thông tin được cập nhật   | 
+| /books/1           | DELETE | 204 No Content                    |
+| /books/1           | GET    | 404 Not Found                     |
