@@ -1,0 +1,13 @@
+| Mã trạng thái | Tên mã                | Mô tả ngắn gọn                                    |
+| ------------- | --------------------- | ------------------------------------------------- |
+| 200           | OK                    | Yêu cầu thành công, server trả về dữ liệu.        |
+| 201           | Created               | Dữ liệu đã được tạo thành công.                   |
+| 204           | No Content            | Yêu cầu thành công nhưng không có dữ liệu trả về. |
+| 400           | Bad Request           | Yêu cầu không hợp lệ từ phía client.              |
+| 401           | Unauthorized          | Yêu cầu cần xác thực (chưa đăng nhập).            |
+| 403           | Forbidden             | Bị từ chối truy cập dù đã xác thực.               |
+| 404           | Not Found             | Không tìm thấy tài nguyên được yêu cầu.           |
+| 405           | Method Not Allowed    | Phương thức HTTP không được hỗ trợ.               |
+| 500           | Internal Server Error | Lỗi phía server.                                  |
+| 503           | Service Unavailable   | Dịch vụ tạm thời không khả dụng.                  |
+
