@@ -1,0 +1,5 @@
+Một HTTP Request là một yêu cầu được gửi từ client đến server để truy cập tài nguyên. Các thành phần chính của HTTP Request gồm:
+- Method: Xác định hành động cần thực hiện. GET dùng để lấy dữ liệu, POST để gửi dữ liệu mới, PUT để cập nhật dữ liệu và DELETE để xóa tài nguyên.
+- URL: Là địa chỉ của tài nguyên trên server mà client muốn truy cập.
+- Headers: Chứa thông tin bổ sung như loại dữ liệu, mã hóa, xác thực và các thông tin trình duyệt.
+- Body: Chỉ có ở một số method như POST hoặc PUT, dùng để gửi dữ liệu từ client đến server.
