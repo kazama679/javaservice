@@ -1,0 +1,10 @@
+Nguyên tắc chung khi đặt tên RESTful API
+Dùng danh từ số nhiều (plural) để biểu diễn resource.
+Ví dụ: /books, /authors, /genres
+
+Dùng chữ thường, phân cách từ bằng dấu gạch ngang - nếu cần thiết.
+Ví dụ: /book-categories, không dùng /BookCategories
+
+Không chèn động từ vào URL – hành động được thể hiện qua phương thức HTTP (GET, POST, PUT, DELETE).
+
+Hạn chế sử dụng query parameters, trừ khi lọc, tìm kiếm, phân trang, sắp xếp...
