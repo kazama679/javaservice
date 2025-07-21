@@ -1,0 +1,19 @@
+- Logging: là quá trình ghi lại các thông tin về trạng thái hoạt động của một hệ thống phần mềm trong suốt quá trình chạy. 
+Những thông tin này có thể bao gồm: lỗi hệ thống, hành vi người dùng, truy vết hệ thống, luồng xử lý, hoặc các cảnh báo quan trọng.
+Thông thường, các bản ghi log sẽ được lưu trữ trong file, console, cơ sở dữ liệu, hoặc các hệ thống quản lý log chuyên biệt.
+
+- Lý do 1: Hỗ trợ gỡ lỗi
++ Logging giúp lập trình viên xác định nguyên nhân lỗi bằng cách cung cấp các thông tin chi tiết như exception, input, trạng thái biến, 
+hay các bước xử lý đã thực hiện.
++ Đặc biệt hữu ích khi lỗi không thể tái hiện trên môi trường phát triển mà chỉ xuất hiện ở môi trường thật.
+
+- Lý do 2: Giám sát và phân tích hệ thống
++ Logging cho phép theo dõi tình trạng ứng dụng theo thời gian thực.
++ Dễ dàng phát hiện các hành vi bất thường, quá tải, hoặc các sự cố bảo mật nhờ các cảnh báo được log lại.
+
+- Lý do 3: Truy vết hoạt động người dùng và hệ thống
++ Các hành động như đăng nhập, thay đổi dữ liệu, thanh toán,... đều có thể được ghi lại để đối chiếu, kiểm tra hoặc điều tra sau này.
++ Giúp đảm bảo tính minh bạch, xác minh giao dịch hoặc trách nhiệm người dùng.
+
+- Logging không chỉ là công cụ kỹ thuật phục vụ cho lập trình viên, mà còn là yếu tố cốt lõi trong việc duy trì, giám sát và bảo vệ ứng dụng 
+Một hệ thống logging tốt sẽ giúp tăng tính ổn định, khả năng mở rộng và độ tin cậy của phần mềm.
