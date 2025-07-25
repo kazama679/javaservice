@@ -1,0 +1,19 @@
+- Phân tích và giải thích các trường trong payload
+Trường	Ý nghĩa
+sub	(Subject) ID người dùng – định danh chính
+name	Tên người dùng (có thể hiển thị trên UI)
+role	Quyền hạn người dùng (USER, ADMIN, v.v.)
+iat	(Issued At) Thời điểm token được tạo (Unix timestamp)
+
+
+Nhận xét về rủi ro bảo mật nếu lộ thông tin trong payload
+🔸 Không mã hóa: Payload trong JWT chỉ được mã hóa Base64, KHÔNG PHẢI là mã hóa bảo mật ⇒ bất kỳ ai có token đều có thể giải mã được payload.
+🔸 Nếu chứa thông tin nhạy cảm (như email, số điện thoại, mật khẩu, thông tin ngân hàng...):
+Hacker có thể đọc và lợi dụng.
+
+Vi phạm nguyên tắc bảo mật (như GDPR, HIPAA).
+
+🔸 Giải pháp đề xuất:
+Không đưa dữ liệu nhạy cảm vào payload.
+Nếu cần, hãy mã hóa payload riêng trước khi đưa vào JWT.
+Giới hạn thời gian sống (exp) ngắn và triển khai cơ chế thu hồi token nếu cần.
