@@ -1,0 +1,24 @@
+- JWT (JSON Web Token) là một chuẩn mở (RFC 7519) dùng để truyền thông tin giữa các bên dưới dạng một đối tượng JSON nhỏ gọn, an toàn và có thể xác minh được. JWT thường được sử dụng trong cơ chế xác thực (authentication) và phân quyền (authorization) trong các hệ thống web, API hoặc ứng dụng phân tán.
+
+- Ưu điểm:
++ Tự chứa (self-contained): chứa đầy đủ thông tin người dùng và các claim, không cần truy cập DB nhiều lần.
++ Độc lập với server: không cần lưu session trên server, giúp hệ thống mở rộng dễ dàng (stateless).
++ Chuyển đổi nhanh và gọn nhẹ: sử dụng định dạng base64 nên dễ dàng truyền qua HTTP header.
++ Xác minh chữ ký: có thể xác minh tính toàn vẹn thông tin bằng khóa bí mật (HMAC) hoặc khóa công khai (RSA/ECDSA).
+
+- Nhược điểm:
++ Không thể thu hồi: Một khi JWT đã phát hành thì không thể thu hồi nếu chưa hết hạn (trừ khi triển khai danh sách đen).
++ Kích thước lớn: chứa nhiều thông tin nên có thể lớn hơn cookie/session thông thường.
++ Bảo mật phụ thuộc vào việc bảo vệ khóa ký: nếu lộ secret key, hệ thống sẽ bị tấn công.
+
+- Trường hợp sử dụng phổ biến của JWT
++ Xác thực người dùng (Authentication):
++ Sau khi đăng nhập thành công, server trả JWT để client lưu lại (trong localStorage hoặc cookie).
++ Phân quyền (Authorization):
++ JWT chứa thông tin quyền hạn của người dùng, giúp hệ thống quyết định ai được phép làm gì.
++ Giao tiếp giữa các microservice:
++ Các dịch vụ nội bộ sử dụng JWT để xác minh nguồn gọi và dữ liệu được tin cậy.
++ Ứng dụng di động & SPAs (Single Page Application):
++ Thay thế session, hoạt động tốt với ứng dụng không lưu trạng thái (stateless).
++ API bảo mật (RESTful API, GraphQL):
++ Token được gửi qua header Authorization: Bearer <token>.
