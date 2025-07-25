@@ -1,0 +1,19 @@
+(1) Client → POST /login (gửi username/password)
+       ↓
+(2) Server kiểm tra thông tin người dùng:
+       - Nếu hợp lệ → tạo JWT
+       - Nếu sai → trả về lỗi
+       ↓
+(3) Server → Trả về JWT cho Client
+       ↓
+(4) Client lưu JWT (localStorage / sessionStorage / Cookie)
+       ↓
+(5) Client → Gửi request đến API (GET /api/users)
+       - Gắn Header: Authorization: Bearer <JWT>
+       ↓
+(6) Server nhận request → kiểm tra JWT:
+       - Xác minh chữ ký
+       - Kiểm tra hạn
+       ↓
+(7) Nếu token hợp lệ → Trả về dữ liệu
+       Nếu token không hợp lệ → 401 Unauthorized
