@@ -1,0 +1,7 @@
+| Lỗi                     | Hành động đề xuất (Client)                 |
+| ----------------------- | ------------------------------------------ |
+| Token hết hạn           | Đăng xuất + chuyển login                   |
+| Sai chữ ký              | Đăng xuất + chuyển login                   |
+| Token sai định dạng     | Hiển thị thông báo + kiểm tra lỗi kỹ thuật |
+| Không gửi token         | Chặn truy cập, chuyển login                |
+| Thuật toán không hỗ trợ | Đăng xuất, yêu cầu đăng nhập lại           |
